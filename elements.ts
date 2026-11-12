@@ -1,3 +1,4 @@
+//1. Adding a color theme button functionality
 const colorthemebutton = document.getElementById("colorbutton") as HTMLButtonElement
 
 document.body.style.backgroundColor = "white";
