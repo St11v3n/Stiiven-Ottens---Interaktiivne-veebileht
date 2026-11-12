@@ -62,3 +62,39 @@ random_word_submit_button.addEventListener("click", wordSubmission)
 
 random_word_list_reset_button?.addEventListener("click", wordListReset)
 //--------------------------------------------------------------------------------------------------------------------------------------
+
+//3. Adding a page alignment functionality via a button.
+
+const page_alignment_button = document.getElementById("alignment_button") as HTMLButtonElement
+
+document.body.style.display = "flex"
+
+document.body.style.flexDirection = "column"
+
+document.body.style.textAlign = "left"
+
+document.body.style.alignItems = "flex-start"
+
+function AlignText() : void {
+  if (document.body.style.textAlign == "left" && document.body.style.alignItems == "flex-start")
+  {
+    document.body.style.textAlign = "center";
+    document.body.style.alignItems = "center"
+
+  }
+
+  else if (document.body.style.textAlign == "center" && document.body.style.alignItems == "center")
+  {
+    document.body.style.textAlign = "right";
+    document.body.style.alignItems = "flex-end"
+  }
+
+  else if (document.body.style.textAlign == "right" && document.body.style.alignItems == "flex-end")
+  {
+    document.body.style.textAlign = "left";
+    document.body.style.alignItems = "flex-start"
+  }
+}
+
+page_alignment_button.addEventListener("click", AlignText)
+
