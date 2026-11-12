@@ -20,3 +20,45 @@ function toggleTheme() : void {
 }
 
 colorthemebutton.addEventListener("click", toggleTheme)
+
+//----------------------------------------------------------------------------------------------------------------------------------------------
+
+//2. Adding a input field and a submit button, so upon writing the word into the input field and then clicking the submit button,
+//the words will get placed into an unordered list within the html page. It also has a reset button, that completely wipes clears the word list.
+const random_word_input = document.getElementById("random_word") as HTMLInputElement
+
+const random_word_submit_button = document.getElementById("submit_button") as HTMLButtonElement
+
+const random_word_list_reset_button = document.getElementById("reset_button")
+
+const random_word_list = document.getElementById("random_word_display") as HTMLUListElement
+
+function wordSubmission() : void {
+    var word = random_word_input.value.trim()
+
+    if (word == "")
+    {
+        return
+    }
+
+    const word_list = document.createElement("li")
+
+    word_list.textContent = word
+
+    random_word_list.appendChild(word_list)
+
+    random_word_input.value = ""
+
+}
+
+function wordListReset() : void {
+
+    random_word_list.textContent = ""
+    
+    
+}
+
+random_word_submit_button.addEventListener("click", wordSubmission)
+
+random_word_list_reset_button?.addEventListener("click", wordListReset)
+//--------------------------------------------------------------------------------------------------------------------------------------
